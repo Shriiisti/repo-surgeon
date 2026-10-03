@@ -1,0 +1,16 @@
+# Secret keys: never publish these
+.env
+.env.*
+*.key
+
+# Python clutter
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+
+# Editor and system files
+.vscode/
+.DS_Store
+Thumbs.db
