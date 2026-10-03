@@ -24,7 +24,14 @@ with st.sidebar:
         st.error("No key set yet.")
     max_attempts = st.slider("Max attempts", 1, 8, 5)
 
-project = st.text_input("Project folder to repair", "demo_project")
+project = st.selectbox(
+    "Project to repair",
+    ["demo_project", "demo_orders"],
+    format_func=lambda name: {
+        "demo_project": "Shopping cart (1 bug, 1 file)",
+        "demo_orders": "Order totals (2 bugs, 2 files)",
+    }[name],
+)
 
 
 def show_count(placeholder, value, previous=None):
